@@ -14,7 +14,7 @@ class GiphyApi
         $url = "https://api.giphy.com/v1/gifs/search?"
             . "api_key=" . $this->apiKey
             . "&q=" . urlencode($searchTerm)
-            . "&limit=12"
+            . "&limit=3"
             . "&rating=g";
 
         $curl = curl_init();
