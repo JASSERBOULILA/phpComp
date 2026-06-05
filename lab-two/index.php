@@ -3,7 +3,7 @@
 require_once 'db_config.php';
 require_once 'BookRepository.php';
 
-$dbEngine = new BookDatabase($host, $db, $user, $password);
+$dbEngine = new BookDatabase("172.31.22.43", "Jasser200657132", "Jasser200657132", "xKhhRBS7EN");
 $conn = $dbEngine->getConnection();
 $repo = new BookRepository($conn);
 

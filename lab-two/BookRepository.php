@@ -20,8 +20,9 @@ class BookRepository {
             // your named placeholder to the incoming method argument before execution.
             // [Your code here]]
             $stmt->bindValue(':genreName', $genreName, PDO::PARAM_STR);
+            
             $stmt->execute();
-            return $stmt->fetchAll();
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
         } catch (PDOException $e) {
             return [];
         }
