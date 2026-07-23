@@ -1,0 +1,8 @@
+CREATE TABLE pizzaOrders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    price DECIMAL(6,2) NOT NULL,
+    quantity INT NOT NULL,
+    topping VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
