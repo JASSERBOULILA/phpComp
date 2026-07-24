@@ -42,3 +42,11 @@ button {
     background-color: #d4edda;
     color: #155724;
 }
+
+footer{
+    background-color: #d62828;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}

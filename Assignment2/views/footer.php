@@ -1,5 +1,5 @@
 <footer>
-    <p>Right Reserve 2026 / Jasser Boulila</p>
+    <p>&copy; <?php echo date("Y"); ?> Pizza Order | Created by Jasser Boulila</p>
 </footer>
 
 </body>

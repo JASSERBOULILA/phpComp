@@ -2,6 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
 require_once "./classes/Database.php";
 require_once "./classes/Pizza.php";
 
@@ -14,16 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $quantity = $_POST["quantity"];
     $topping = $_POST["topping"];
 
-    $database = new Database(
-        "172.31.22.43",
-        "pizza",
-        "Jasser200657132",
-        "xKhhRBS7EN"
-    );
-
-    $db = $database->connect();
-
-    $pizza = new Pizza($db);
+    $database = (new Database())->connect();
+    $pizza = new pizzaRecords($database);
 
     $pizza->create(
         $name,
@@ -35,12 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $message = "Your pizza order under doing";
 }
 
-require_once "./views/header.php";
-
 ?>
-
-
-<?php require_once 'views/header.php'; ?>
+<?php require_once "./views/header.php"; ?>
 
 <main class="container">
 
@@ -87,7 +76,7 @@ require_once "./views/header.php";
             required
         >
 
-        <label for="topping">Topping</label>
+        <label for="topping">Pick your Toppings</label>
 
         <select id="topping" name="topping">
 
